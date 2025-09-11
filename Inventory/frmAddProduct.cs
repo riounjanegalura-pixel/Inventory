@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Inventory
 {
@@ -22,6 +23,8 @@ namespace Inventory
 
         private double _SellPrice;
 
+        string[] ListOfProductCategory;
+
         public frmAddProduct()
         {
             InitializeComponent();
@@ -29,7 +32,16 @@ namespace Inventory
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
-            string[] List_Of_Product_Category = { "Beverages", "Bread/Bakery", "Canned/Jarred Goods", "Dairy", "Frozen Goods", "Meat", "Personal Care", "Other" };
+            string[] ListOfProductCategory = { "Beverages", "Bread/Bakery", "Canned/Jarred Goods", 
+                "Dairy", "Frozen Goods", "Meat", "Personal Care", "Other" };
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (string _Category in ListOfProductCategory)
+            {
+                cbCategory.Items.Add(_Category);
+            }
         }
     }
 }
