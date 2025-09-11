@@ -26,5 +26,10 @@ namespace Inventory
         {
             InitializeComponent();
         }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+            string[] List_Of_Product_Category = { "Beverages", "Bread/Bakery", "Canned/Jarred Goods", "Dairy", "Frozen Goods", "Meat", "Personal Care", "Other" };
+        }
     }
 }

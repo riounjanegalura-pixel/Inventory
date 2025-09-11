@@ -70,7 +70,6 @@
             this.txtSellPrice.Name = "txtSellPrice";
             this.txtSellPrice.Size = new System.Drawing.Size(191, 20);
             this.txtSellPrice.TabIndex = 2;
-//            this.txtSellPrice.TextChanged += new System.EventHandler(this.txtSellPrice_TextChanged);
             // 
             // label1
             // 
@@ -149,7 +148,6 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(191, 21);
             this.cbCategory.TabIndex = 10;
-//            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // dtPickerMfgDate
             // 
@@ -225,7 +223,7 @@
             this.Controls.Add(this.txtProductName);
             this.Name = "frmAddProduct";
             this.Text = "Form1";
-//            this.Load += new System.EventHandler(this.frmAddProduct_Load);
+            this.Load += new System.EventHandler(this.frmAddProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProductList)).EndInit();
             this.ResumeLayout(false);
