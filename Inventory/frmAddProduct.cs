@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -24,6 +25,25 @@ namespace Inventory
         private double _SellPrice;
 
         string[] ListOfProductCategory;
+
+        public string Product_Name(string name)
+        {
+            if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
+                throw new Exception();
+                return name;
+        }
+        public int Quantity(string qty)
+        {
+            if (!Regex.IsMatch(qty, @"^[0-9]"))
+                throw new Exception();
+                return Convert.ToInt32(qty);
+        }
+        public double SellingPrice(string price)
+        {
+            if (!Regex.IsMatch(price.ToString(), @"^(\d*\.)?\d+$"))
+                throw new Exception();
+                return Convert.ToDouble(price);
+        }
 
         public frmAddProduct()
         {
