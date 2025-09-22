@@ -66,5 +66,20 @@ namespace Inventory
                 cbCategory.Items.Add(_Category);
             }
         }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            _ProductName = Product_Name(txtProductName.Text);
+            _Category = cbCategory.Text;
+            _MfgDate = dtPickerMfgDate.Value.ToString("yyyy-MM-dd");
+            _ExpDate = dtPickerExpDate.Value.ToString("yyyy-MM-dd");
+            _Description = richTxtDescription.Text;
+            _Quantity = Quantity(txtQuantity.Text);
+            _SellPrice = SellingPrice(txtSellPrice.Text);
+            showProductList.Add(new ProductClass(_ProductName, _Category, _MfgDate,
+            _ExpDate, _SellPrice, _Quantity, _Description));
+            gridViewProductList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridViewProductList.DataSource = showProductList;
+        }
     }
 }
