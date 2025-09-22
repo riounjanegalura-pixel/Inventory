@@ -14,6 +14,8 @@ namespace Inventory
 {
     public partial class frmAddProduct : Form
     {
+        private BindingSource showProductList;
+
         private string _ProductName;
         private string _Category;
         private string _MfgDate;
@@ -48,6 +50,7 @@ namespace Inventory
         public frmAddProduct()
         {
             InitializeComponent();
+            showProductList = new BindingSource();
         }
 
         private void frmAddProduct_Load(object sender, EventArgs e)
